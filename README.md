@@ -1,2 +1,3 @@
-# Accieo
-Navigation Application for Differently Abled
+# README #
+
+DU-DIC Project for listing accessible portions
