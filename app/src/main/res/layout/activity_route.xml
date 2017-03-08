@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/sourceField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/white_curve"
+            android:hint="Source"
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+
+        <EditText
+            android:id="@+id/destinationField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/white_curve"
+            android:hint="Destination"
+
+            android:inputType="textPersonName"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll"
+        tools:context="dudic.accieo.Route" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:onClick="showRoute"
+        android:src="@drawable/icon_route"
+        app:fabSize="normal" />
+</RelativeLayout>

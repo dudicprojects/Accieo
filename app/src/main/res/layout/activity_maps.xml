@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/only_toolbar" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        tools:context="ui.Maps" />
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/explore_bt_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@string/explore_accessible_places"
+        android:onClick="explorePlaces"
+        app:fabSize="normal"
+        app:fab_colorNormal="@color/colorPrimary"
+        app:fab_colorPressed="@color/colorPrimaryDark"
+        app:fab_icon="@drawable/explore" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/expandable_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/explore_bt_float"
+        android:layout_alignBaseline="@id/explore_bt_float"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        app:fab_addButtonColorNormal="#ddd"
+        app:fab_addButtonColorPressed="#bbb"
+        app:fab_addButtonPlusIconColor="#000"
+        app:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="getToCurrentLoc"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_icon="@drawable/ic_current_loc"
+            app:fab_title="Current Location" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/add_new_place"
+            android:onClick="addPlace"
+            app:fab_colorNormal="@color/colorPrimary"
+            app:fab_colorPressed="@color/colorPrimaryDark"
+            app:fab_icon="@drawable/icon_plus"
+            app:fab_title="Add Place" />
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+</RelativeLayout>
+
