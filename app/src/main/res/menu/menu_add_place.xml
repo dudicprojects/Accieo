@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/ic_tick"
+        android:title="Add"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_dismiss"
+        android:icon="@drawable/ic_cross"
+        android:title="Dismiss"
+        app:showAsAction="always" />
+</menu>
