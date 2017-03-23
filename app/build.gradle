@@ -4,7 +4,6 @@ apply plugin: 'com.neenbedankt.android-apt'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "dudic.accieo"
         minSdkVersion 14
@@ -25,6 +24,8 @@ android {
     dexOptions {
         javaMaxHeapSize "4g"
     }
+    productFlavors {
+    }
 }
 
 dependencies {
@@ -34,7 +35,6 @@ dependencies {
         transitive = true
     }
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
-    compile 'com.google.android.gms:play-services:9.0.0'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.jakewharton:butterknife:8.0.1'
     compile 'com.android.support:multidex:1.0.1'
@@ -44,5 +44,6 @@ dependencies {
     compile 'com.koushikdutta.ion:ion:2.1.7'
     compile 'org.parceler:parceler-api:1.1.4'
     apt 'org.parceler:parceler:1.1.4'
-
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
+    compile 'com.google.android.gms:play-services:10.2.0'
 }

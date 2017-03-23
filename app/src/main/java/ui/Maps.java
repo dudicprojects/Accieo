@@ -354,12 +354,18 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, Googl
             @Override
             public void onResult(@NonNull PlaceLikelihoodBuffer likelyPlaces) {
                 Log.e(TAG, "onResult \n" + likelyPlaces.toString());
-                addPlaceIntent.putExtra(Constants.PLACE_NAME, likelyPlaces.get(0).getPlace().getName());
-                addPlaceIntent.putExtra(Constants.ADDRESS, likelyPlaces.get(0).getPlace().getAddress());
-                addPlaceIntent.putExtra(Constants.LATITUDE, likelyPlaces.get(0).getPlace().getLatLng().latitude);
-                addPlaceIntent.putExtra(Constants.LONGITUDE, likelyPlaces.get(0).getPlace().getLatLng().longitude);
-                addPlaceIntent.putExtra(Constants.PLACE_TYPE, likelyPlaces.get(0).getPlace().getPlaceTypes().get(0));
-                likelyPlaces.release();
+                try {
+                    addPlaceIntent.putExtra(Constants.PLACE_NAME, likelyPlaces.get(0).getPlace().getName());
+                    addPlaceIntent.putExtra(Constants.ADDRESS, likelyPlaces.get(0).getPlace().getAddress());
+                    addPlaceIntent.putExtra(Constants.LATITUDE, likelyPlaces.get(0).getPlace().getLatLng().latitude);
+                    addPlaceIntent.putExtra(Constants.LONGITUDE, likelyPlaces.get(0).getPlace().getLatLng().longitude);
+                    addPlaceIntent.putExtra(Constants.PLACE_TYPE, likelyPlaces.get(0).getPlace().getPlaceTypes().get(0));
+                    likelyPlaces.release();
+                }
+                catch(Exception e)
+                {
+                    Log.e("Hi","Exception Handled");
+                }
             }
         });
 
