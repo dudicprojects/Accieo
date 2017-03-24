@@ -118,10 +118,7 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, Googl
         user = new User(this);
 
 
-        if (!user.isConnected()) {
-            showToast(getString(R.string.network_problem));
-            return;
-        }
+
 
 
         lps = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -135,6 +132,10 @@ public class Maps extends AppCompatActivity implements OnMapReadyCallback, Googl
         mapFragment.getMapAsync(this);
 
         mContext = this;
+        if (!user.isConnected()) {
+            showToast(getString(R.string.network_problem));
+            return;
+        }
         addPlaceIntent = new Intent(mContext, AddPlace.class);
 
         progressDialog = new ProgressDialog(this);
